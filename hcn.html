@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<canvas id="mycanvas" width="500px" height="500px" style="border: 1px solid black;"></canvas>
+<body>
+<SCRIPT>
+   function drawrectang  (chieudai,chieurong,x,y) {
+        this.chieudai=chieudai;
+        this.chieurong=chieurong;
+        this.x=x;
+        this.y=y;
+        this.dientich=function () {
+            return this.chieudai*this.chieurong;
+
+        };
+        this.chuvi=function () {
+            return (this.chieudai+this.chieurong)*2;
+
+        };
+        this.draw=function () {
+          var cvs=document.getElementById('mycanvas').getContext('2d');
+          cvs.beginPath();
+            cvs.fillRect(this.x,this.y,chieudai,chieurong);
+            cvs.fill();
+
+        }
+        
+    }
+
+    let hcn =new drawrectang (100,50,100,100);
+   hcn.draw();
+    alert(hcn.dientich());
+    alert(hcn.chuvi());
+</SCRIPT>
+</body>
+</html>
